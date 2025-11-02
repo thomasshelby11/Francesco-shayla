@@ -1,5 +1,5 @@
 
-// Countdown to wedding date (30 May 2025). If date is past, show message.
+// Countdown to wedding date (30 May 2026). If date is past, show message.
 (function(){
   // Set target date (YYYY, M-1, D, H, M, S)
   const target = new Date(2025, 4, 30, 12, 0, 0); // May is month 4 (0-based)
