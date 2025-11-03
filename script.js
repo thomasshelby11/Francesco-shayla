@@ -30,3 +30,19 @@
   update();
   setInterval(update, 1000);
 })();
+/* === Musica di sottofondo === */
+
+const audio = new Audio('audio/musica.mp3');
+let playing = false;
+
+function toggleMusic() {
+  if (!playing) {
+    audio.play();
+    playing = true;
+    document.getElementById('music-btn').innerHTML = '⏸️ Pausa musica';
+  } else {
+    audio.pause();
+    playing = false;
+    document.getElementById('music-btn').innerHTML = '🎶 Play musica';
+  }
+}
