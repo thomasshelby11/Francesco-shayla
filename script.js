@@ -31,15 +31,19 @@
   setInterval(update, 1000);
 })();
 /* === Musica di sottofondo === */
-
 const audio = new Audio('audio/musica.mp3');
+audio.loop = true;
 let playing = false;
 
 function toggleMusic() {
   if (!playing) {
-    audio.play();
-    playing = true;
-    document.getElementById('music-btn').innerHTML = '⏸️ Pausa musica';
+    audio.play().then(() => {
+      playing = true;
+      document.getElementById('music-btn').innerHTML = '⏸️ Pausa musica';
+    }).catch(err => {
+      alert('Tocca lo schermo per attivare la musica 🎵');
+      console.error(err);
+    });
   } else {
     audio.pause();
     playing = false;
